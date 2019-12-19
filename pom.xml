@@ -18,6 +18,7 @@
     <modules>
         <module>spring-cloud-eureka</module>
         <module>spring-cloud-producer</module>
+        <module>spring-cloud-producer2</module>
         <module>spring-cloud-consumer</module>
         <module>spring-cloud-model</module>
     </modules>

@@ -9,9 +9,9 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <artifactId>spring-cloud-producer</artifactId>
+    <artifactId>spring-cloud-producer2</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>spring-cloud-producer</name>
+    <name>spring-cloud-producer2</name>
     <description>Demo project for Spring Boot</description>
 
     <dependencies>

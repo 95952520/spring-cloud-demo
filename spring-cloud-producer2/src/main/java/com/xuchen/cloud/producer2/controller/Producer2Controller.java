@@ -1,4 +1,4 @@
-package com.xuchen.cloud.producer.controller;
+package com.xuchen.cloud.producer2.controller;
 
 import com.xuchen.cloud.model.user.UserModel;
 import lombok.extern.slf4j.Slf4j;
@@ -11,10 +11,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 @Slf4j
 @RestController
-public class ProducerController {
+public class Producer2Controller {
 
     @Value("${appName}")
     String appName;
+
+
 
     @GetMapping("/hello")
     public String hello(@RequestParam String name) {
