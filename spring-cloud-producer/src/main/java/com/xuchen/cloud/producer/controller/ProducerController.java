@@ -1,5 +1,8 @@
 package com.xuchen.cloud.producer.controller;
 
+import cn.hutool.core.date.DateUtil;
+import cn.hutool.core.thread.ThreadUtil;
+import cn.hutool.core.util.StrUtil;
 import com.xuchen.cloud.model.user.UserModel;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
@@ -18,8 +21,9 @@ public class ProducerController {
 
     @GetMapping("/hello")
     public String hello(@RequestParam String name) {
+        ThreadUtil.sleep(5000);
         log.info("接收到请求：{}", name);
-        return appName + "："+name;
+        return StrUtil.format("{}-{}-{}", DateUtil.now(),appName,name);
     }
 
     @PostMapping("/user")

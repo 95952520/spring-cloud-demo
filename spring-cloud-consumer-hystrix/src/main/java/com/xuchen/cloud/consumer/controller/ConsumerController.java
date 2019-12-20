@@ -32,7 +32,7 @@ public class ConsumerController {
     public UserModel user(UserModel userModel) {
         log.info("consumer接收到http请求:{}", JSONUtil.toJsonStr(userModel));
         UserModel user = producerRemote.user(userModel);
-        log.info("consumer接收到producer响应:{}", JSONUtil.toJsonStr(user));
+        log.info("consumer接收到响应:{}", JSONUtil.toJsonStr(user));
         return user;
     }
 }
