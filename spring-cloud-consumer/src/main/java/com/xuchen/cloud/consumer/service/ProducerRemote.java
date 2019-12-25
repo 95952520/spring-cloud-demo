@@ -1,5 +1,6 @@
 package com.xuchen.cloud.consumer.service;
 
+import com.xuchen.cloud.model.base.Result;
 import com.xuchen.cloud.model.user.UserModel;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,8 +15,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 public interface ProducerRemote {
 
     @GetMapping("hello")
-    String hello(@RequestParam("name") String name);
+    Result<String> hello(@RequestParam("name") String name);
 
     @PostMapping("user")
-    UserModel user(UserModel userModel);
+    Result<UserModel> user(UserModel userModel);
 }

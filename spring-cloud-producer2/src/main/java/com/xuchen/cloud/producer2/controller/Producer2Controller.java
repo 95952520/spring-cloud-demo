@@ -2,6 +2,7 @@ package com.xuchen.cloud.producer2.controller;
 
 import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.util.StrUtil;
+import com.xuchen.cloud.model.base.Result;
 import com.xuchen.cloud.model.user.UserModel;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
@@ -21,15 +22,15 @@ public class Producer2Controller {
 
 
     @GetMapping("/hello")
-    public String hello(@RequestParam String name) {
+    public Result hello(@RequestParam String name) {
         log.info("{} 接收到请求：{}",appName, name);
-        return StrUtil.format("{}-{}-{}", DateUtil.now(),appName,name);
+        return Result.success(StrUtil.format("{}-{}-{}", DateUtil.now(),appName,name));
     }
 
     @PostMapping("/user")
-    public UserModel user(@RequestBody UserModel userModel) {
+    public Result user(@RequestBody UserModel userModel) {
         log.info("{} 接收到请求：{}",appName, userModel);
         userModel.setPhone("180****9036");
-        return userModel;
+        return Result.success(userModel);
     }
 }

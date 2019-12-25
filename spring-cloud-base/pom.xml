@@ -9,9 +9,9 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <artifactId>spring-cloud-model</artifactId>
+    <artifactId>spring-cloud-base</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>spring-cloud-model</name>
+    <name>spring-cloud-base</name>
     <description>Demo project for Spring Boot</description>
 
 </project>

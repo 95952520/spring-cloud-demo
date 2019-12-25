@@ -18,8 +18,6 @@ public class ConsumerAppTests {
 
     @Test
     public void contextLoads() {
-        String s = producerRemote.hello("xuchen");
-        log.info(s);
     }
 
 }

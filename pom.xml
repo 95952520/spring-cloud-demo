@@ -23,7 +23,7 @@
         <module>spring-cloud-consumer</module>
         <module>spring-cloud-consumer-hystrix</module>
         <module>spring-cloud-hystrix-dashboard</module>
-        <module>spring-cloud-model</module>
+        <module>spring-cloud-base</module>
     </modules>
 
     <properties>

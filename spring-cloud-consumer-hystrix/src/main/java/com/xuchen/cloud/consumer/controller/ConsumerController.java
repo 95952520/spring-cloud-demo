@@ -2,6 +2,7 @@ package com.xuchen.cloud.consumer.controller;
 
 import cn.hutool.json.JSONUtil;
 import com.xuchen.cloud.consumer.service.ProducerRemote;
+import com.xuchen.cloud.model.base.Result;
 import com.xuchen.cloud.model.user.UserModel;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,18 +22,18 @@ public class ConsumerController {
     ProducerRemote producerRemote;
 
     @GetMapping("/hello")
-    public String hello(@RequestParam("name") String name) {
+    public Result<String> hello(@RequestParam("name") String name) {
         log.info("consumer接收到http请求:{}", name);
-        String reuslt = producerRemote.hello(name);
-        log.info("consumer接收到producer响应:{}", reuslt);
-        return reuslt;
+        Result<String> result = producerRemote.hello(name);
+        log.info("consumer接收到producer响应:{}", result);
+        return result;
     }
 
     @GetMapping("/user")
-    public UserModel user(UserModel userModel) {
+    public Result<UserModel> user(UserModel userModel) {
         log.info("consumer接收到http请求:{}", JSONUtil.toJsonStr(userModel));
-        UserModel user = producerRemote.user(userModel);
-        log.info("consumer接收到响应:{}", JSONUtil.toJsonStr(user));
-        return user;
+        Result<UserModel> result = producerRemote.user(userModel);
+        log.info("consumer接收到producer响应:{}", JSONUtil.toJsonStr(result));
+        return result;
     }
 }
