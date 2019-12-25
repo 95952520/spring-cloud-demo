@@ -1,4 +1,4 @@
-package com.xuchen.cloud.model;
+package com.xuchen.cloud.producer2;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class SpringCloudModelApplicationTests {
+public class Producer2AppTests {
 
     @Test
     public void contextLoads() {

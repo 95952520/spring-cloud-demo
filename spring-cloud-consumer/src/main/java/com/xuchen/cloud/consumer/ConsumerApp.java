@@ -1,15 +1,17 @@
-package com.xuchen.cloud.producer2;
+package com.xuchen.cloud.consumer;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-public class SpringCloudProducer2Application {
+@EnableFeignClients
+public class ConsumerApp {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringCloudProducer2Application.class, args);
+        SpringApplication.run(ConsumerApp.class, args);
     }
 
 }

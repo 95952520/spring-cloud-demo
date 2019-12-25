@@ -21,14 +21,13 @@ public class ProducerController {
 
     @GetMapping("/hello")
     public String hello(@RequestParam String name) {
-        ThreadUtil.sleep(5000);
-        log.info("接收到请求：{}", name);
+        log.info("{} 接收到请求：{}",appName, name);
         return StrUtil.format("{}-{}-{}", DateUtil.now(),appName,name);
     }
 
     @PostMapping("/user")
     public UserModel user(@RequestBody UserModel userModel) {
-        log.info("接收到请求：{}", userModel);
+        log.info("{} 接收到请求：{}",appName, userModel);
         userModel.setPhone("180****9036");
         return userModel;
     }
