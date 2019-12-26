@@ -13,11 +13,22 @@ spring:
           enabled: true
           #通过小写访问服务
           lower-case-service-id: true
+      default-filters:
+        - name: Hystrix
+          args:
+            name: fallbackcmd
+            fallbackUri: forward:/fallback
+        - name: RequestRateLimiter
+          args:
+            key-resolver: "#{@remoteKeyResolver}"
+            redis-rate-limiter.replenishRate: 1
+            redis-rate-limiter.burstCapacity: 2
+
   redis:
-    port: 6379
+    port: 16379
     password: password
     database: 0
-    host: localhost
+    host: 114.67.100.84
 eureka:
   instance:
     leaseRenewalIntervalInSeconds: 10
@@ -25,3 +36,10 @@ eureka:
     registryFetchIntervalSeconds: 5
     serviceUrl:
       defaultZone: http://localhost:8001/eureka/
+hystrix:
+  command:
+    fallbackcmd:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 1000

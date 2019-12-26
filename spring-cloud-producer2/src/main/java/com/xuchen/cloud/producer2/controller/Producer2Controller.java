@@ -1,6 +1,7 @@
 package com.xuchen.cloud.producer2.controller;
 
 import cn.hutool.core.date.DateUtil;
+import cn.hutool.core.thread.ThreadUtil;
 import cn.hutool.core.util.StrUtil;
 import com.xuchen.cloud.model.base.Result;
 import com.xuchen.cloud.model.user.UserModel;
@@ -23,6 +24,7 @@ public class Producer2Controller {
 
     @GetMapping("/hello")
     public Result hello(@RequestParam String name) {
+        ThreadUtil.sleep(2*1000);
         log.info("{} 接收到请求：{}",appName, name);
         return Result.success(StrUtil.format("{}-{}-{}", DateUtil.now(),appName,name));
     }
