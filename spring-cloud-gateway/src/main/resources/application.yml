@@ -5,6 +5,13 @@ spring:
   application:
     name: api-gateway
   cloud:
+    consul:
+      host: 172.18.50.116
+      port: 8500
+      discovery:
+        service-name: ${spring.application.name}
+        prefer-ip-address: true
+
     gateway:
       discovery:
         locator:
@@ -23,7 +30,6 @@ spring:
             key-resolver: "#{@remoteKeyResolver}"
             redis-rate-limiter.replenishRate: 1
             redis-rate-limiter.burstCapacity: 2
-
   redis:
     port: 16379
     password: password

@@ -3,8 +3,18 @@ server:
 spring:
   application:
     name: producer
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8001/eureka/
+  cloud:
+    consul:
+      host: 172.18.50.116
+      port: 8500
+      enabled: true
+      discovery:
+        service-name: ${spring.application.name}
+        prefer-ip-address: true
+        enabled: true
+
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://localhost:8001/eureka/
 appName: producer2

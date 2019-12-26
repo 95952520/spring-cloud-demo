@@ -3,10 +3,18 @@ server:
 spring:
   application:
     name: consumer
-eureka:
-  instance:
-    leaseRenewalIntervalInSeconds: 10
-  client:
-    registryFetchIntervalSeconds: 5
-    serviceUrl:
-      defaultZone: http://localhost:8001/eureka/
+  cloud:
+    consul:
+      host: 172.18.50.116
+      port: 8500
+      discovery:
+        service-name: ${spring.application.name}
+        prefer-ip-address: true
+
+#eureka:
+#  instance:
+#    leaseRenewalIntervalInSeconds: 10
+#  client:
+#    registryFetchIntervalSeconds: 5
+#    serviceUrl:
+#      defaultZone: http://localhost:8001/eureka/
