@@ -6,12 +6,11 @@ spring:
     name: api-gateway
   cloud:
     consul:
-      host: 172.18.50.116
+      host: localhost
       port: 8500
       discovery:
         service-name: ${spring.application.name}
         prefer-ip-address: true
-
     gateway:
       discovery:
         locator:
@@ -31,17 +30,10 @@ spring:
             redis-rate-limiter.replenishRate: 1
             redis-rate-limiter.burstCapacity: 2
   redis:
-    port: 16379
+    port: 6379
     password: password
     database: 0
-    host: 114.67.100.84
-eureka:
-  instance:
-    leaseRenewalIntervalInSeconds: 10
-  client:
-    registryFetchIntervalSeconds: 5
-    serviceUrl:
-      defaultZone: http://localhost:8001/eureka/
+    host: localhost
 hystrix:
   command:
     fallbackcmd:
