@@ -1,6 +1,6 @@
 server:
   port: 8040
-
+#https://cloud.spring.io/spring-cloud-gateway/reference/html/appendix.html  全配置
 spring:
   application:
     name: api-gateway
@@ -13,6 +13,10 @@ spring:
           enabled: true
           #通过小写访问服务
           lower-case-service-id: true
+          #https://www.jianshu.com/p/5e40bbc95eb9
+#          url-expression: "'lb://inner/'+serviceId"
+          filters:
+            - stripPrefix=1
       default-filters:
         - name: Hystrix
           args:
@@ -23,7 +27,6 @@ spring:
             key-resolver: "#{@remoteKeyResolver}"
             redis-rate-limiter.replenishRate: 1
             redis-rate-limiter.burstCapacity: 2
-
   redis:
     port: 16379
     password: password

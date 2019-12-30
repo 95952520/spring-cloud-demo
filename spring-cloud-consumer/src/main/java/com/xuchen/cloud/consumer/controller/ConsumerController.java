@@ -25,7 +25,7 @@ public class ConsumerController {
     @GetMapping(value = "/hello",produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public Result<String> hello(@RequestParam("name") String name) {
         log.info("consumer接收到http请求:{}", name);
-        Result<String> result = producerRemote.hello(name);
+        Result<String> result = producerRemote.hello(name+"-"+System.currentTimeMillis());
         log.info("consumer接收到producer响应:{}", result);
         return result;
     }

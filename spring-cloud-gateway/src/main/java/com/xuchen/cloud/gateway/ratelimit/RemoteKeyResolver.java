@@ -9,8 +9,6 @@ import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
 
 /**
- * @author xuchen
- * @date 2019/12/25
  * 根据id限流
  */
 @Slf4j

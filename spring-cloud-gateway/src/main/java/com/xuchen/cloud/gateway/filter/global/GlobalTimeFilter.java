@@ -14,7 +14,7 @@ import reactor.core.publisher.Mono;
  * 全局过滤器
  */
 @Slf4j
-//@Component
+@Component
 public class GlobalTimeFilter implements GlobalFilter, Ordered {
 
     @Override

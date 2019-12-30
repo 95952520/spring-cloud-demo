@@ -24,8 +24,8 @@ public class Producer2Controller {
 
     @GetMapping("/hello")
     public Result hello(@RequestParam String name) {
-        ThreadUtil.sleep(2*1000);
         log.info("{} 接收到请求：{}",appName, name);
+        ThreadUtil.sleep(2*1000);
         return Result.success(StrUtil.format("{}-{}-{}", DateUtil.now(),appName,name));
     }
 
